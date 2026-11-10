@@ -32,9 +32,9 @@ wss.on('connection', ws => {
     }
     if(!ws.room) return;
     if(m.type==='move') { ws.player={name:m.name||'Onderzoeker',x:m.x,y:m.y,a:m.a}; broadcast(ws.room,{type:'move',id:ws.id,...ws.player},ws); }
+    if(m.type==='zombies' && Array.isArray(m.zombies)) { broadcast(ws.room,{type:'zombies',zombies:m.zombies.slice(0,12)},ws); }
     if(m.type==='state' && ['power','key','code','escaped'].includes(m.key)) { ws.room.state[m.key]=true; broadcast(ws.room,{type:'state',key:m.key,value:true}); }
   });
   ws.on('close',()=>{ if(!ws.room)return; ws.room.clients.delete(ws); broadcast(ws.room,{type:'left',id:ws.id}); if(!ws.room.clients.size) rooms.delete(ws.code); });
 });
 const port=process.env.PORT||3000; server.listen(port,()=>console.log(`MFC Heynsdaele draait op http://localhost:${port}`));
-
