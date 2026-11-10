@@ -1,0 +1,2 @@
+#shopButton{pointer-events:auto;position:absolute;top:12px;right:14px;margin:0;padding:8px}#shop{position:fixed;z-index:9;width:min(420px,92vw);left:50%;top:50%;transform:translate(-50%,-50%);padding:28px;background:rgba(5,10,13,.96);border:1px solid #53656a;box-shadow:0 0 60px #000;text-align:center}.close{float:right;font-size:20px;background:none;color:#ddd;padding:0;margin:0}#shop button[data-buy],#shop button[data-pack]{display:block;width:100%;margin:8px 0;text-align:left}#level{position:absolute;left:50%;top:47px;transform:translateX(-50%);color:#aab}
+
