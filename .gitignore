@@ -1,0 +1,6 @@
+node_modules/
+.env
+heynsdaele-users.json
+heynsdaele-users.json.tmp
+outputs/
+
